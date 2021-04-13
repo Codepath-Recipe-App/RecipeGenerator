@@ -36,6 +36,12 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 * Generates meal plans
 * Saving recipes of interest
 
+### Video Walkthroughs
+
+<img scr='LoginScreenWalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 ### 2. Screen Archetypes
 
 * Login 

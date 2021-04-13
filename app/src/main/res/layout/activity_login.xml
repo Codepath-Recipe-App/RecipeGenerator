@@ -8,26 +8,26 @@
     android:orientation="vertical"
     tools:context="LoginActivity">
 
-    <EditText
+   <!-- <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:ems="10"
-        android:hint="@string/name" />
-
+        android:hint="name" />
+    -->
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:ems="10"
-        android:hint="@string/username" />
+        android:hint="username" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="83dp"
         android:ems="10"
-        android:hint="@string/password"
+        android:hint="password"
         android:inputType="textPassword" />
 
     <Button
