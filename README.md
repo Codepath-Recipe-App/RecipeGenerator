@@ -23,11 +23,11 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 
 **Required Must-have Stories**
 
-* User signs up
-* User logs in to access previous settings
-* User can type ingredients
-* Generated recipes
-* Profile pages for each user
+* [x] User can sign up to create a new account using Parse authentication
+* [x] User can log in to access previous settings
+* [ ] User can input ingredients
+* [ ] Recipes are generated using spoonacular API
+* [ ] Profile pages for each user
 
 **Optional Nice-to-have Stories**
 
