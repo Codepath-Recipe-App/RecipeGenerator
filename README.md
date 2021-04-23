@@ -25,7 +25,8 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 
 * [x] User can sign up to create a new account using Parse authentication
 * [x] User can log in to access previous settings
-* [ ] User can input ingredients
+* [x] User can input ingredients
+* [x] Array of ingredients are saved on server
 * [ ] Recipes are generated using spoonacular API
 * [ ] Profile pages for each user
 
@@ -39,6 +40,8 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 ### Video Walkthroughs
 
 <img src='LoginScreenWalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='Week2Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
