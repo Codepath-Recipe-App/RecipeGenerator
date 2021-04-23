@@ -39,9 +39,9 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 
 ### Video Walkthroughs
 
-<img src='LoginScreenWalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
 <img src='Week2Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='LoginScreenWalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
