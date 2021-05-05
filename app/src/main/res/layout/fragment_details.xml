@@ -40,26 +40,26 @@
 
     <TextView
         android:id="@+id/tvSummary"
-        android:layout_width="375dp"
-        android:layout_height="297dp"
+        android:layout_width="386dp"
+        android:layout_height="318dp"
         android:layout_below="@+id/tvMissingIng2"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="12dp"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="0dp"
         tools:text="The recipe Soy-and-Ginger-Glazed Salmon with Udon Noodles can be made  in approximately 1 hour and 35 minutes. One portion of this dish contains about 48g of protein, 17g of fat, and a total of 552 calories. This recipe serves 4. For $5.91 per serving, this recipe covers 47% of your daily requirements of vitamins and minerals. It works well as a main course. 1 person has tried and liked this recipe. It is brought to you by Food and Wine. If you have fresh ginger, udon noodles, salmon fillets, and a few other ingredients on hand, you can make it. It is a good option if you're following a dairy free and pescatarian diet. All things considered, we decided this recipe deserves a spoonacular score of 92%. This score is great. If you like this recipe, take a look at these similar recipes: Salmon With Soy-ginger Noodles, Ginger-Soy Salmon With Soba Noodles, and Soy and ginger salmon with soba noodles." />
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
+        android:layout_width="91dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivPhoto2"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="71dp"
         android:layout_marginTop="6dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="24dp"
         android:layout_toEndOf="@+id/tvTitle2"
         android:text="Save" />
 

@@ -163,6 +163,7 @@ public class ComposeFragment extends Fragment {
     private void saveIngredients(ParseUser currentUser) {
         //Ingredients ingredientsObject = new Ingredients();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Ingredients");
+        query.whereEqualTo("user", currentUser);
         ingredientsObjectId = "s6O487dklf"; // change later to dynamically catch object id
         query.getInBackground(ingredientsObjectId, new GetCallback<ParseObject>() {
             @Override

@@ -103,8 +103,5 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             return INSTANCE;
         }
 
-       /* public Recipe getData() {
-            return this.data;
-        }*/
     }
 }
