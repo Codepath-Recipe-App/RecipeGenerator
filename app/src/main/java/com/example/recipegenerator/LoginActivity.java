@@ -11,12 +11,25 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.recipegenerator.fragments.ComposeFragment;
+import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
+    public static List<String> ingItems = new ArrayList<>();
+    public String ingredientsObjectId;
     public static final String TAG = "LoginActivity";
     private EditText etUsername;
     private EditText etPassword;
@@ -43,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i(TAG, "onClick login button");
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
+                queryIngredients();
                 loginUser(username, password);
             }
         });
@@ -100,5 +114,47 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
+    }
+
+    protected void queryIngredients() {
+        ParseQuery<Ingredients> query = ParseQuery.getQuery(Ingredients.class);
+        query.include(Ingredients.KEY_USER);
+        query.setLimit(1);
+        query.findInBackground(new FindCallback<Ingredients>() {
+            @Override
+            public void done(List<Ingredients> objects, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Issue with getting ingredients", e);
+                    return;
+                }
+                ParseObject object = objects.get(0);  // error: ParseObject cannot be cast to Ingredients
+                ingredientsObjectId = object.getObjectId();
+                // split ingredients string into array list
+                //String ing = "apples,+sugar,+flour"; // this format
+                String ing = (object).getString("ingredients");
+                ingItems = new ArrayList<>();
+                String[] i = ing.split(",[+]");
+                for(String n: i) {
+                    ingItems.add(n);
+                }
+                Log.i("queryIngredients: ", String.valueOf(ingItems));
+                //itemsAdapter.notifyDataSetChanged();
+                saveItems();
+            }
+        });
+        //saveItems();
+    }
+
+    private void saveItems() {
+        try {
+            FileUtils.writeLines(getDatafile(), ingItems);
+        } catch (IOException e) {
+            Log.e("LoginActivity", "Error writing items", e);
+        }
+    }
+
+    public File getDatafile() {
+        Log.i("LoginActivity", String.valueOf(getFilesDir()));
+        return new File(getFilesDir(), "data.txt");
     }
 }

@@ -27,8 +27,8 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 * [x] User can log in to access previous settings
 * [x] User can input ingredients
 * [x] Array of ingredients are saved on server
-* [ ] Recipes are generated using spoonacular API
-* [ ] Profile pages for each user
+* [x] Recipes are generated using spoonacular API
+* [x] Profile pages for each user
 
 **Optional Nice-to-have Stories**
 
@@ -38,6 +38,8 @@ This app uses the spoonacular API to generate recipes based on ingredients in yo
 * Saving recipes of interest
 
 ### Video Walkthroughs
+
+<img src='Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='Week2Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
