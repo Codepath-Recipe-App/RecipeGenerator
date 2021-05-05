@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.recipegenerator.fragments.ComposeFragment;
 import com.example.recipegenerator.fragments.PostsFragment;
+import com.example.recipegenerator.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         // TODO: update fragment
                         Toast.makeText(MainActivity.this, "Profile!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
+                        fragment = new ProfileFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();

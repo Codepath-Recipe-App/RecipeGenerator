@@ -67,7 +67,7 @@ public class GenerateFragment extends Fragment {
         rvRecipes = view.findViewById(R.id.rvRecipes);
 
         RecipeAdapter recipeAdapter = new RecipeAdapter(getContext(), recipes);
-        rvRecipes.setAdapter(recipeAdapter); //maybe error because onCreate runs before onViewCreated
+        rvRecipes.setAdapter(recipeAdapter);
         rvRecipes.setLayoutManager(new LinearLayoutManager(getContext()));
 
         AsyncHttpClient client = new AsyncHttpClient();

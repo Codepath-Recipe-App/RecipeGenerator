@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
@@ -23,6 +24,11 @@ import com.example.recipegenerator.BuildConfig;
 import com.example.recipegenerator.R;
 import com.example.recipegenerator.fragments.adapters.RecipeAdapter;
 import com.example.recipegenerator.fragments.models.Recipe;
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +49,9 @@ public class DetailsFragment extends Fragment {
     TextView tvSummary;
     Button btnSave;
     String recipeid;
+    String title;
+    String summary;
+    String photopath;
 
     public DetailsFragment() {
         // Required empty public constructor
@@ -70,9 +79,10 @@ public class DetailsFragment extends Fragment {
         //Recipe recipe = RecipeAdapter.ViewHolder.getData();
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            tvTitle2.setText(bundle.getString("title", ""));
+            title = bundle.getString("title", "");
+            tvTitle2.setText(title);
             tvMissingIng2.setText(bundle.getString("missedIngredients", ""));
-            String photopath = bundle.getString("image", "");
+            photopath = bundle.getString("image", "");
             Glide.with(this).load(photopath).into(ivPhoto2);
             recipeid = bundle.getString("id", "");
         }
@@ -88,9 +98,11 @@ public class DetailsFragment extends Fragment {
                 Log.i(TAG, "Results: " + jsonObject.toString());
                 try {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        tvSummary.setText(Html.fromHtml(jsonObject.getString("summary"), Html.FROM_HTML_MODE_COMPACT));
+                        summary = String.valueOf(Html.fromHtml(jsonObject.getString("summary"), Html.FROM_HTML_MODE_COMPACT));
+                        tvSummary.setText(summary);
                     } else {
-                        tvSummary.setText(jsonObject.getString("summary"));
+                        summary = jsonObject.getString("summary");
+                        tvSummary.setText(summary);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -103,8 +115,25 @@ public class DetailsFragment extends Fragment {
             }
         });
 
-    }
-}
-/*
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                saveRecipe(currentUser);
+            }
+        });
 
- */
+    }
+
+
+    private void saveRecipe(ParseUser currentUser) {
+        ParseObject object = new ParseObject("Post");
+        object.put("title", title);
+        object.put("user", currentUser);
+        object.put("recipeid", recipeid);
+        object.put("summary", summary);
+        object.put("imageUrl", photopath);
+        object.saveInBackground();
+    }
+
+}
