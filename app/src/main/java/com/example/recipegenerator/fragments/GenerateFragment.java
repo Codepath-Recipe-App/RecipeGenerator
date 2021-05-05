@@ -36,7 +36,7 @@ public class GenerateFragment extends Fragment {
 
     public static final String FIND_BY_INGREDIENTS_URL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
     public static final String SUMMARIZE_RECIPE_URL = "https://api.spoonacular.com/recipes/";//   {id}/summary";
-    public String consumerKey = "ad9c914a894a4e45929376dcd68dc922"; // BuildConfig.SA_KEY; //build
+    public String consumerKey = BuildConfig.SA_KEY; //build
     public static final String TAG = "GenerateFragment";
 
     List<Recipe> recipes;

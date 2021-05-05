@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.recipegenerator.BuildConfig;
 import com.example.recipegenerator.R;
 import com.example.recipegenerator.fragments.adapters.RecipeAdapter;
 import com.example.recipegenerator.fragments.models.Recipe;
@@ -33,7 +34,7 @@ public class DetailsFragment extends Fragment {
 
     //public static final String FIND_BY_INGREDIENTS_URL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
     public static final String SUMMARIZE_RECIPE_URL = "https://api.spoonacular.com/recipes/";//   {id}/summary";
-    public String consumerKey = "ad9c914a894a4e45929376dcd68dc922"; // BuildConfig.SA_KEY; //build
+    public String consumerKey = BuildConfig.SA_KEY; //build
     public static final String TAG = "DetailsFragment";
 
     TextView tvTitle2;
